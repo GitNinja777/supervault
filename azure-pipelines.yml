@@ -48,12 +48,12 @@ steps:
     TargetFolder: '$(build.artifactStagingDirectory)'
     condition: succeededOrFailed()
 
-    - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact: drop'
-      inputs:
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+    inputs:
       PathtoPublish: '$(build.artifactStagingDirectory)'
-      condition: succeededOrFailed()
-      
+    condition: succeededOrFailed()
+
  
 
 
