@@ -39,17 +39,16 @@
     continueOnError: true
 
   - task: ArchiveFiles@2
-    inputs:
-      rootFolderOrFile: '$(Build.BinariesDirectory)'
-      includeRootFolder: true
-      archiveType: 'zip'
-      archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-      replaceExistingArchive: true
+  inputs:
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
+    archiveType: "zip"
+    archiveFile: "$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip"
+    replaceExistingArchive: true
 
   - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: '$(build.artifactstagingdirectory)'
-  
+  inputs:
+    pathToPublish: "$(Build.ArtifactStagingDirectory)"
+    artifactName: "drop"
 
 
 
